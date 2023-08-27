@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tech_tronex/widgets/app_footer.dart';
+import 'package:tech_tronex/screen/screen_widgets/app_footer.dart';
 
 class HomeScreenView extends StatelessWidget {
   const HomeScreenView({super.key});
