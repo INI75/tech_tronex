@@ -23,7 +23,7 @@ class AppFooter extends StatelessWidget {
               FooterCompanyInfo(),
               Spacer(),
               SizedBox(
-                width: 240,
+                width: 400,
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tech_tronex/screen/home_screen.dart';
+import 'package:tech_tronex/screen/sections/home/home_screen.dart';
 
 
 void main() {
