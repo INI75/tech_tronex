@@ -10,20 +10,19 @@ class AppFooter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // var media = MediaQuery.of(context).size;
+    var media = MediaQuery.of(context).size;
     bool widescreen = (ResponsiveScreenView.isDesktop(context) ||
         ResponsiveScreenView.isTablet(context));
     return Container(
-      padding: widescreen ? const EdgeInsets.all(20) : const EdgeInsets.all(8),
+      padding: widescreen ? const EdgeInsets.all(20) : const EdgeInsets.all(5),
       color: AppColors.touchColor,
       width: double.infinity,
-      height: widescreen ? 260 : 450,
+      height: widescreen ? 260 : 400,
       child: widescreen
           ? const Row(children: [
               FooterCompanyInfo(),
               Spacer(),
               SizedBox(
-                width: 400,
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -31,24 +30,22 @@ class AppFooter extends StatelessWidget {
                 ),
               ),
             ])
-          : const Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                  FooterCompanyInfo(),
-                  SizedBox(height: 60),
-                  SizedBox(
-                    // width: 240,
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        FooterNavBar(),
-                        Spacer(),
-                        FooterLegal(),
-                      ],
-                    ),
-                  ),
-                ]),
+          : Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              FooterCompanyInfo(),
+              SizedBox(height: 60),
+              SizedBox(
+                width: media.width < 280 ? 280 : null,
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    FooterNavBar(),
+                    Spacer(),
+                    FooterLegal(),
+                  ],
+                ),
+              ),
+            ]),
     );
   }
 }
@@ -115,7 +112,7 @@ class FooterNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 110,
+      width: 105,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -143,7 +140,7 @@ class FooterLegal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 160,
+      width: 158,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

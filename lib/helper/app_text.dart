@@ -113,7 +113,7 @@ class TitleText extends StatelessWidget {
       style: TextStyle(
         fontFamily: 'Satoshi',
         color: color ?? Colors.black,
-        fontSize: size ?? 20,
+        fontSize: size ?? 18,
         fontWeight: fontWeight ?? FontWeight.w700,
       ),
     );
@@ -196,7 +196,7 @@ class SmallBodyText extends StatelessWidget {
       style: TextStyle(
         fontFamily: 'Satoshi',
         color: color ?? Colors.black,
-        fontSize: size ?? 16,
+        fontSize: size ?? 15,
         decoration: decoration,
         fontWeight: fontWeight ?? FontWeight.w400,
       ),
