@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tech_tronex/screen/sections/home/home_screen.dart';
+import 'package:tech_tronex/screen/sections/products/product_screen.dart';
 
 
 void main() {
@@ -21,6 +22,11 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: const  HomeScreenView(),
+       routes: {
+
+        HomeScreenView.routeName :(context) => const   HomeScreenView(),
+        ProductScreen.routeName : (context) => const ProductScreen()
+       },
     );
   }
 }

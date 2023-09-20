@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tech_tronex/helper/app_text.dart';
+import 'package:tech_tronex/screen/sections/home/home_screen.dart';
+import 'package:tech_tronex/screen/sections/products/product_screen.dart';
 import 'package:tech_tronex/util/app_colors.dart';
 import 'package:tech_tronex/util/responsive_screen.dart';
 import 'package:tech_tronex/widgets/app_nav.dart';
@@ -63,13 +64,21 @@ class _ScreenAppBarState extends State<ScreenAppBar>
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         NavTextButton(
-                            label: 'Home', selected: false, function: () {}),
-                        NavTextButton(
-                            label: 'Projects',
+                            label: 'HOME',
                             selected: false,
-                            function: () {}),
+                            function: () {
+                              Navigator.pushReplacementNamed(
+                                  context, HomeScreenView.routeName);
+                            }),
                         NavTextButton(
-                            label: 'Contact-us',
+                            label: 'PRODUCTS',
+                            selected: false,
+                            function: () {
+                              Navigator.pushReplacementNamed(
+                                  context, ProductScreen.routeName);
+                            }),
+                        NavTextButton(
+                            label: 'CONTACT-US',
                             selected: false,
                             function: () {}),
                       ]),
@@ -117,17 +126,21 @@ class _ScreenAppBarState extends State<ScreenAppBar>
                         children: [
                           const SizedBox(height: 20),
                           NavTextButton2(
-                              label: 'Home',
+                              label: 'HOME',
                               function: () {
                                 toggleChoice();
+                                Navigator.pushReplacementNamed(
+                                    context, HomeScreenView.routeName);
                               }),
                           NavTextButton2(
-                              label: 'Projects',
+                              label: 'PRODUCTS',
                               function: () {
                                 toggleChoice();
+                                Navigator.pushReplacementNamed(
+                                    context, ProductScreen.routeName);
                               }),
                           NavTextButton2(
-                              label: 'Contact-us',
+                              label: 'CONTACT-US',
                               function: () {
                                 toggleChoice();
                               }),
@@ -148,7 +161,6 @@ class _ScreenAppBarState extends State<ScreenAppBar>
                     ),
                     onPressed: toggleChoice),
               ),
-            
             ],
           ),
         ),

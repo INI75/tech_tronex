@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tech_tronex/helper/app_text.dart';
+import 'package:tech_tronex/screen/sections/home/home_screen.dart';
+import 'package:tech_tronex/screen/sections/products/product_screen.dart';
 import 'package:tech_tronex/util/app_colors.dart';
 import 'package:tech_tronex/util/responsive_screen.dart';
 import 'package:tech_tronex/widgets/app_icon_button.dart';
@@ -31,11 +33,11 @@ class AppFooter extends StatelessWidget {
               ),
             ])
           : Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              FooterCompanyInfo(),
-              SizedBox(height: 60),
+              const FooterCompanyInfo(),
+              const SizedBox(height: 60),
               SizedBox(
                 width: media.width < 280 ? 280 : null,
-                child: Row(
+                child: const Row(
                   mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -121,9 +123,19 @@ class FooterNavBar extends StatelessWidget {
             color: Colors.white,
           ),
           const SizedBox(height: 10),
-          AppTextButton(text: 'Home', function: () {}),
+          AppTextButton(
+              text: 'Home',
+              function: () {
+                Navigator.pushReplacementNamed(
+                    context, HomeScreenView.routeName);
+              }),
           const SizedBox(height: 10),
-          AppTextButton(text: 'Product', function: () {}),
+          AppTextButton(
+              text: 'Product',
+              function: () {
+                Navigator.pushReplacementNamed(
+                    context, ProductScreen.routeName);
+              }),
           const SizedBox(height: 10),
           AppTextButton(text: 'Contact ', function: () {}),
         ],
