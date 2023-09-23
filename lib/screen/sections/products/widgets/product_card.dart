@@ -24,10 +24,19 @@ class ProductCard extends StatelessWidget {
     bool widescreen = (ResponsiveScreenView.isDesktop(context) ||
         ResponsiveScreenView.isTablet(context));
 
-    var aimage = SizedBox(
-      height: widescreen ? 300 : 200,
-      width: widescreen ? media.width * .3 : media.width * .8,
-      child: Image.asset(image),
+    var aimage = Column(
+      children: [
+        SizedBox(
+          height: widescreen ? 300 : 200,
+          width: widescreen ? media.width * .3 : media.width * .8,
+          child: Image.asset(image),
+        ),
+        const SizedBox(height: 15),
+        SizedBox(
+          child: OutlinedButton(
+              onPressed: () {}, child: const BodyMediumText(text: 'view more')),
+        )
+      ],
     );
     var btexts = SizedBox(
       width: widescreen ? media.width * .3 : media.width * .8,
@@ -36,11 +45,11 @@ class ProductCard extends StatelessWidget {
         children: [
           TitleText(text: title),
           const SizedBox(height: 10),
-          BodyMediumText(text: description1, maxLines: 50, color: Colors.black),
+          BodyText(text: description1, maxLines: 50, color: Colors.black),
           const SizedBox(height: 15),
           TitleText(text: title2),
           const SizedBox(height: 10),
-          BodyMediumText(text: description2, maxLines: 50, color: Colors.black),
+          BodyText(text: description2, maxLines: 50, color: Colors.black),
         ],
       ),
     );

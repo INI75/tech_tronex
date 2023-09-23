@@ -6,6 +6,7 @@ import 'package:tech_tronex/util/app_colors.dart';
 import 'package:tech_tronex/util/responsive_screen.dart';
 import 'package:tech_tronex/widgets/app_icon_button.dart';
 import 'package:tech_tronex/widgets/app_text_button.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class AppFooter extends StatelessWidget {
   const AppFooter({super.key});
@@ -55,6 +56,14 @@ class AppFooter extends StatelessWidget {
 class FooterCompanyInfo extends StatelessWidget {
   const FooterCompanyInfo({super.key});
 
+  void _launchURL(String url) async {
+    if (await canLaunchUrl(Uri.parse(url))) {
+      await launchUrl(Uri.parse(url));
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -87,17 +96,33 @@ class FooterCompanyInfo extends StatelessWidget {
             children: [
               AppIconButton(
                 icon: 'asset/facebook.svg',
-                function: () {},
+                function: () {
+                  _launchURL(
+                      'https://web.facebook.com/profile.php?id=61551731913755');
+                },
               ),
               const SizedBox(width: 20),
               AppIconButton(
                 icon: 'asset/instagram.svg',
-                function: () {},
+                function: () {
+                  _launchURL('https://www.instagram.com/techtronex_embedded/');
+                },
               ),
               const SizedBox(width: 20),
               AppIconButton(
                 icon: 'asset/twitter.svg',
-                function: () {},
+                function: () {
+                  _launchURL('https://twitter.com/Techtronexx');
+                },
+              ),
+              const SizedBox(width: 20),
+              AppIconButton(
+                icon: 'asset/LinkedIn.svg',
+                size: 20,
+                function: () {
+                  _launchURL(
+                      'https://www.linkedin.com/company/techtronex-embedded');
+                },
               ),
             ],
           ),

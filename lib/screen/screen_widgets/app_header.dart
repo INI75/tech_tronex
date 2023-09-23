@@ -61,7 +61,7 @@ class _ScreenAppBarState extends State<ScreenAppBar>
                 SizedBox(
                   width: 400,
                   child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         NavTextButton(
                             label: 'HOME',
@@ -77,10 +77,6 @@ class _ScreenAppBarState extends State<ScreenAppBar>
                               Navigator.pushReplacementNamed(
                                   context, ProductScreen.routeName);
                             }),
-                        NavTextButton(
-                            label: 'CONTACT-US',
-                            selected: false,
-                            function: () {}),
                       ]),
                 ),
               ],
@@ -138,11 +134,6 @@ class _ScreenAppBarState extends State<ScreenAppBar>
                                 toggleChoice();
                                 Navigator.pushReplacementNamed(
                                     context, ProductScreen.routeName);
-                              }),
-                          NavTextButton2(
-                              label: 'CONTACT-US',
-                              function: () {
-                                toggleChoice();
                               }),
                         ],
                       ),

@@ -74,7 +74,10 @@ class ProductScreen extends StatelessWidget {
               ),
             ),
           ),
-          const ScreenAppBar(),
+          Container(
+              width: media.width,
+              color:   Colors.white,
+              child: const ScreenAppBar()),
         ],
       ),
     );
